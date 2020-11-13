@@ -1,10 +1,6 @@
 package com.kodilla.testing.collection;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
+import org.junit.jupiter.api.*;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -20,41 +16,33 @@ public class CollectionTestSuite {
     @DisplayName("When using empty list return empty List")
     @Test
     public void testOddNumbersExterminatorEmptyList() {
-        boolean elements = true;
-        ArrayList<Integer> entryData = new ArrayList<>();
+        System.out.println("Empty List test");
+        //Given
         OddNumberExterminator oddNumbersExterminator = new OddNumberExterminator();
-        oddNumbersExterminator.exterminate(entryData);
-        for(Integer entry : oddNumbersExterminator.exterminate(entryData)) {
-            if(entry % 2 != 0) {
-                elements = false;
-            }
-        }
-        if(elements) {
-            System.out.println("EmptyList test OK");
-        } else {
-            System.out.println("EmptyList test failed!");
-        }
+        ArrayList<Integer> emptyList = new ArrayList<>();
+        ArrayList<Integer> expectedList = new ArrayList<>();
+        //When
+        ArrayList<Integer> emptyListExterminated = oddNumbersExterminator.exterminate(emptyList);
+        //Then
+        Assertions.assertEquals(emptyListExterminated, expectedList);
     }
     @DisplayName("When using normal list (odd and even numbers) return even number List")
     @Test
     public void testOddNumbersExterminatorNormalList() {
-        boolean elements = true;
-        ArrayList<Integer> entryData = new ArrayList<>();
+        System.out.println("Normal List test");
+        //Given
+        ArrayList<Integer> randomEntryNumbers = new ArrayList<>();
         Random random = new Random();
-        for(int i = 1; i < 100; i++){
-            entryData.add(random.nextInt(100));
+        for(int i = 1; i < 100; i++) {
+            randomEntryNumbers.add(random.nextInt(100));
         }
+        //When
         OddNumberExterminator oddNumberExterminator = new OddNumberExterminator();
-        oddNumberExterminator.exterminate(entryData);
-        for(Integer entry : oddNumberExterminator.exterminate(entryData)) {
-            if(entry % 2 != 0) {
-                elements = false;
-            }
-        }
-        if(elements) {
-            System.out.println("NormalList test OK");
-        } else {
-            System.out.println("NormalList test failed!");
+        ArrayList<Integer> evenNumbersList = oddNumberExterminator.exterminate(randomEntryNumbers);
+        //Then
+        Assertions.assertTrue(evenNumbersList.size() != 0);
+        for(Integer evenNumber : evenNumbersList) {
+            Assertions.assertEquals(0, evenNumber % 2);
         }
     }
 }
