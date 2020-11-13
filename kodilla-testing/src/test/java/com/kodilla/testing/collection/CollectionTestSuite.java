@@ -24,7 +24,7 @@ public class CollectionTestSuite {
         //When
         ArrayList<Integer> emptyListExterminated = oddNumbersExterminator.exterminate(emptyList);
         //Then
-        Assertions.assertEquals(emptyListExterminated, expectedList);
+        Assertions.assertEquals(expectedList, emptyListExterminated);
     }
     @DisplayName("When using normal list (odd and even numbers) return even number List")
     @Test
