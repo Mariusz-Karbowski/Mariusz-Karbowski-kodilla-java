@@ -24,7 +24,7 @@ public class StreamMain {
         System.out.println("Text beautifier");
         PoemBeautifier poemBeautifier = new PoemBeautifier();
         String textToBeBeautified = "This Text Needs Beautification.";
-        String textToBeBeautified2 = " Opposite to this one.";
+        //String textToBeBeautified2 = " Opposite to this one.";
         poemBeautifier.beautify(textToBeBeautified,(toBeDecorated -> toBeDecorated.toUpperCase()));
         poemBeautifier.beautify(textToBeBeautified,(toBeDecorated -> toBeDecorated.toLowerCase()));
         poemBeautifier.beautify(textToBeBeautified,(toBeDecorated -> toBeDecorated.replace("Needs", "Needs No")));
