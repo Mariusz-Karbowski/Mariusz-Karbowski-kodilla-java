@@ -30,6 +30,5 @@ public class StreamMain {
         poemBeautifier.beautify(textToBeBeautified,(toBeDecorated -> toBeDecorated.replace("Needs", "Needs No")));
         poemBeautifier.beautify(textToBeBeautified, (toBeDecorated -> toBeDecorated.replaceAll(" ", "_")));
         poemBeautifier.beautify(textToBeBeautified,(toBeDecorated -> "<<< " + toBeDecorated + " >>>"));
-        poemBeautifier.beautify(textToBeBeautified,(toBeDecorated -> toBeDecorated.concat(textToBeBeautified2)));
     }
 }
