@@ -1,8 +1,9 @@
 package com.kodilla.stream;
 
 import com.kodilla.stream.beautifier.PoemBeautifier;
-//import com.kodilla.stream.lambda.ExpressionExecutor;
-//import com.kodilla.stream.reference.FunctionalCalculator;
+import com.kodilla.stream.iterate.NumbersGenerator;
+import com.kodilla.stream.lambda.ExpressionExecutor;
+import com.kodilla.stream.reference.FunctionalCalculator;
 
 public class StreamMain {
 
@@ -19,7 +20,7 @@ public class StreamMain {
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::multiplyAByB);
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::addAToB);
         expressionExecutor.executeExpression(3,4, FunctionalCalculator::subBFromA);
-        expressionExecutor.executeExpression(3,4, FunctionalCalculator::divideAByB);*/
+        expressionExecutor.executeExpression(3,4, FunctionalCalculator::divideAByB);
 
         System.out.println("Text beautifier");
         PoemBeautifier poemBeautifier = new PoemBeautifier();
@@ -29,6 +30,8 @@ public class StreamMain {
         poemBeautifier.beautify(textToBeBeautified,(toBeDecorated -> toBeDecorated.toLowerCase()));
         poemBeautifier.beautify(textToBeBeautified,(toBeDecorated -> toBeDecorated.replace("Needs", "Needs No")));
         poemBeautifier.beautify(textToBeBeautified, (toBeDecorated -> toBeDecorated.replaceAll(" ", "_")));
-        poemBeautifier.beautify(textToBeBeautified,(toBeDecorated -> "<<< " + toBeDecorated + " >>>"));
+        poemBeautifier.beautify(textToBeBeautified,(toBeDecorated -> "<<< " + toBeDecorated + " >>>"));*/
+        System.out.println("Using stream to generate even numbers from 1 to 20");
+        NumbersGenerator.generatEven(20);
     }
 }
