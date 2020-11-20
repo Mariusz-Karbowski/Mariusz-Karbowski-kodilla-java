@@ -1,5 +1,7 @@
 package com.kodilla.testing.forum.statistics;
 
+import java.sql.SQLOutput;
+
 public class ForumStatistics {
 
     private int numberOfUsers;
