@@ -3,6 +3,7 @@ package com.kodilla.stream.portfolio;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -163,12 +164,12 @@ public class BoardTestSuite {
         long tasksTime = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
-                .map(task -> DAYS.between(task.getCreated(), task.getDeadline()))
-                .reduce(0L, (sum, current) -> sum += current);
+                .map(task -> Period.between(task.getCreated(), LocalDate.now()).getDays())
+                .reduce(0, (sum, current) -> sum += current);
 
         double average = tasksTime / tasksCount;
 
         //Then
-        assertEquals(18.0, average);
+        assertEquals(10.0, average);
     }
 }
