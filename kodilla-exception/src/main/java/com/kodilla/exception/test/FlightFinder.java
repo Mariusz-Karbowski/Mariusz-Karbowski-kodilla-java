@@ -14,8 +14,8 @@ public class FlightFinder {
         airportsMap.put("London Stansted Airport", true);
         airportsMap.put("Geneva Airport", true);
 
-        if (flight.getDepartureAirport() != null && airportsMap.get(flight.getDepartureAirport()) != false && airportsMap.get(flight.getArrivalAirport()) != false) {
-            return airportsMap.get(flight.getDepartureAirport()) && airportsMap.get(flight.getArrivalAirport());
+        if (airportsMap.containsKey(flight.getArrivalAirport())) {
+            return airportsMap.get(flight.getArrivalAirport());
         } else {
             throw new RouteNotFoundException("Some of the Airports are unavailable.");
         }
