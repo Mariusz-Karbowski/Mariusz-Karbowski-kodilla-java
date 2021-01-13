@@ -1,5 +1,7 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.challenges.moviestore;
 
+
+import com.kodilla.good.patterns.challenges.moviestore.MovieStore;
 
 import java.util.ArrayList;
 import java.util.List;
