@@ -17,7 +17,7 @@ public class CalculatorTestSuite {
         calculator.add(2, 2);
         calculator.sub(5, 2);
         calculator.mul(3, 3);
-        calculator.div(5, 2);
+        calculator.div(5, 3.5);
         //Then
         //do nothing
     }
