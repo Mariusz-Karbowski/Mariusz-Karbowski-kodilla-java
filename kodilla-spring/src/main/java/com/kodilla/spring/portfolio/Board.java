@@ -1,9 +1,9 @@
 package com.kodilla.spring.portfolio;
 
 public class Board {
-    private TaskList toDoList;
-    private TaskList inProgressList;
-    private TaskList doneList;
+    final TaskList toDoList;
+    final TaskList inProgressList;
+    final TaskList doneList;
 
     public Board(TaskList toDoList, TaskList inProgressList, TaskList doneList) {
         this.toDoList = toDoList;
